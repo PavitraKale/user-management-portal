@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+# User Management Portal
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern **User Management Portal** built with **React** and **Ant Design** to efficiently manage users, including viewing, editing, searching, filtering, and deleting user data. This project demonstrates best practices in **React development**, **state management**, and **clean UI design**.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Demo Screenshot / GIF
+*(Add a screenshot or GIF of your portal here to make it visually appealing)*
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **User Listing:** View all users in a paginated table.
+- **Search & Filter:** Search users by name, email, or role (minimum 4 characters), and filter by role or status.
+- **User Details Drawer:** Click a user to view details in a responsive drawer.
+- **Edit User:** Edit user information including name, email, role, and status directly from the drawer.
+- **Delete User:** Delete users safely with a confirmation modal.
+- **Dynamic Status Tags:** User status is highlighted with color-coded tags (`Active`, `Inactive`, `Pending`).
+- **Responsive UI:** Fully responsive design for desktop screens.
+- **Optimized Performance:** Debounced search, memoized table columns, and reusable components for scalability.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technologies Used
 
-### `npm run build`
+- **Frontend:** React (Functional Components + Hooks)
+- **UI Library:** Ant Design (Table, Drawer, Modal, Tag, Input, Select)
+- **State Management:** React `useState`, `useEffect`, `useCallback`, `useMemo`
+- **Utilities:** Custom helper functions for filters and status color
+- **Version Control:** Git (with meaningful commits)
+- **JavaScript:** ES6+ features (destructuring, arrow functions, template literals)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Project Structure
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+src/
+│
+├─ components/ # Reusable components like UserManagementTable
+├─ mockData/ # Mock user data
+├─ utils/ # Utility functions (e.g., getStatusColor)
+├─ constants.js # Constants/messages
+├─ style.js # Custom styles and injected classes
+└─ App.js # Main app entry
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Getting Started
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Prerequisites
+- Node.js >= 14.x
+- npm >= 6.x
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Installation
+1. Clone the repository:
 
-## Learn More
+```bash
+git clone https://github.com/PavitraKale/user-management-portal.git
+cd user-management-portal
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#Install dependencies:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+npm install
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+#Run the application:
 
-### Analyzing the Bundle Size
+npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+#Open in browser:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+http://localhost:3000
