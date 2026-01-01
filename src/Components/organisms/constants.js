@@ -1,0 +1,28 @@
+const messages = {
+    ID: 'ID',
+    NAME: 'Name',
+    EMAIL: 'Email',
+    ROLE: 'Role',
+    STATUS: 'Status',
+    CREATED_AT: 'Created At',
+    ACTIONS: 'Actions',
+    VIEW: 'View',
+    EDIT: 'Edit',
+    DELETE: 'Delete',
+    SEARCH: 'Search',
+    SEARCH_PLACEHOLDER: 'Search by name, email, or role (min 4 characters)',
+    SEARCH_BUTTON: 'Search',
+    CLEAR_FILTERS: 'Clear Filters',
+    CLEAR_FILTERS_BUTTON: 'Clear Filters',
+    SAVE: 'Save Changes',
+    CANCEL: 'Cancel',
+    USER_MANAGEMENT: 'User Management',
+    ADMIN: 'Admin',
+    MANAGER: 'Manager',
+    USER: 'User',
+    ACTIVE: 'Active',
+    INACTIVE: 'Inactive',
+    PENDING: 'Pending',
+  };
+  
+  export default messages;
