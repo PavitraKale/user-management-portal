@@ -1,35 +1,41 @@
 # User Management Portal
 
-A modern **User Management Portal** built with **React** and **Ant Design** to efficiently manage users, including viewing, editing, searching, filtering, and deleting user data. This project demonstrates best practices in **React development**, **state management**, and **clean UI design**.
-
----
-
-## Demo Screenshot / GIF
-*(Add a screenshot or GIF of your portal here to make it visually appealing)*
+A modern **User Management Portal** built with **React** and **Ant Design** to efficiently manage users with full **CRUD functionality**, **persistent storage**, and a clean, scalable architecture.  
+This project demonstrates best practices in **React development**, **state management**, **component reuse**, and **UI/UX design**.
 
 ---
 
 ## Features
 
-- **User Listing:** View all users in a paginated table.
-- **Search & Filter:** Search users by name, email, or role (minimum 4 characters), and filter by role or status.
-- **User Details Drawer:** Click a user to view details in a responsive drawer.
-- **Edit User:** Edit user information including name, email, role, and status directly from the drawer.
+### ✅ Core Functionality
+- **User Listing:** View all users in a paginated, sortable table.
+- **Add User:** Add a new user via a dedicated form with auto-generated unique ID.
+- **Edit User:** Edit user details (name, email, role, status) from a side drawer.
 - **Delete User:** Delete users safely with a confirmation modal.
-- **Dynamic Status Tags:** User status is highlighted with color-coded tags (`Active`, `Inactive`, `Pending`).
-- **Responsive UI:** Fully responsive design for desktop screens.
-- **Optimized Performance:** Debounced search, memoized table columns, and reusable components for scalability.
+- **Persistent Storage:** All add, edit, and delete operations are **saved to localStorage**, so data remains intact after page refresh.
+
+### 🔍 Search & Filters
+- **Search:** Search users by name, email, or role (minimum 4 characters).
+- **Filters:** Filter users by **role** and **status**.
+- **Debounced Search:** Optimized input handling for better performance.
+
+### 🎨 UI & UX
+- **User Details Drawer:** View and edit user details in a responsive drawer.
+- **Dynamic Status Tags:** Color-coded status labels (`Active`, `Inactive`, `Pending`).
+- **Confirmation Modals:** Prevent accidental deletions.
 
 ---
 
 ## Technologies Used
 
 - **Frontend:** React (Functional Components + Hooks)
-- **UI Library:** Ant Design (Table, Drawer, Modal, Tag, Input, Select)
-- **State Management:** React `useState`, `useEffect`, `useCallback`, `useMemo`
-- **Utilities:** Custom helper functions for filters and status color
-- **Version Control:** Git (with meaningful commits)
-- **JavaScript:** ES6+ features (destructuring, arrow functions, template literals)
+- **Routing:** React Router DOM
+- **UI Library:** Ant Design (Table, Drawer, Modal, Tag, Input, Select, Button)
+- **State Management:** React `useState`, `useEffect`
+- **Persistence:** Browser `localStorage`
+- **Utilities:** Custom helpers for filters and status color mapping
+- **Version Control:** Git & GitHub
+- **JavaScript:** ES6+ (arrow functions, destructuring, template literals)
 
 ---
 
@@ -37,39 +43,68 @@ A modern **User Management Portal** built with **React** and **Ant Design** to e
 
 src/
 │
-├─ components/ # Reusable components like UserManagementTable
-├─ mockData/ # Mock user data
-├─ utils/ # Utility functions (e.g., getStatusColor)
-├─ constants.js # Constants/messages
-├─ style.js # Custom styles and injected classes
-└─ App.js # Main app entry
+├─ components/
+│ ├─ organisms/
+│ │ └─ User/
+│ │ └─ User.js # Main User Management component
+│
+├─ pages/
+│ ├─ UsersPage.js # Page-level routing component
+│ └─ AddUser.js # Add User form component
+│
+├─ services/
+│ └─ userStorage.js # localStorage CRUD helper
+│
+├─ utils/
+│ └─ getStatusColor.js # Status → color mapping
+│
+├─ styles/
+│ └─ style.js # Injected/custom styles
+│
+├─ App.js # Router & app shell
+└─ index.js # Entry point
 
+
+---
+
+## Data Persistence Strategy
+
+- On first load, data is stored in `localStorage`
+- All subsequent **add, edit, and delete operations update localStorage**
+- UI state and persistent storage remain **fully synchronized**
+
+This ensures:
+- No data loss on refresh
+- Real-world CRUD behavior without a backend
+- Easy migration to APIs later
 
 ---
 
 ## Getting Started
 
 ### Prerequisites
-- Node.js >= 14.x
-- npm >= 6.x
+- Node.js >= 18.x
+- npm >= 9.x
 
 ### Installation
+
 1. Clone the repository:
 
 ```bash
 git clone https://github.com/PavitraKale/user-management-portal.git
 cd user-management-portal
 
-#Install dependencies:
+Install dependencies:
 
 npm install
 
 
-#Run the application:
+Run the application:
 
 npm start
 
 
-#Open in browser:
+Open in browser:
 
 http://localhost:3000
+
