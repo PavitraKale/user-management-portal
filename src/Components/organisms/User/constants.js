@@ -1,4 +1,4 @@
-const messages = {
+export const messages = {
     ID: 'ID',
     NAME: 'Name',
     EMAIL: 'Email',
@@ -24,5 +24,16 @@ const messages = {
     INACTIVE: 'Inactive',
     PENDING: 'Pending',
   };
+
+  export const STATUS_OPTIONS=[
+    { value: 'Active', label: messages.ACTIVE },
+    { value: 'Inactive', label: messages.INACTIVE },
+    { value: 'Pending', label: messages.PENDING },
+  ];
+
+  export const ROLE_OPTIONS=[
+    { value: 'Admin', label: messages.ADMIN },
+    { value: 'Manager', label: messages.MANAGER },
+    { value: 'User', label: messages.USER },
+  ];
   
-  export default messages;

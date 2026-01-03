@@ -1,6 +1,8 @@
 import React from 'react';
 import { ConfigProvider } from 'antd';
-import UserManagementTable from './Components/organisms/User';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import UsersPage from './pages/UsersPage/UsersPage';
+import AddUsers from './pages/AddUsers/AddUsers';
 import './App.css';
 
 function App() {
@@ -12,9 +14,11 @@ function App() {
         },
       }}
     >
-      <div className="App">
-        <UserManagementTable />
-      </div>
+      <Routes>
+        <Route path="/" element={<Navigate to="/users" />} />
+        <Route path="/users" element={<UsersPage />} />
+        <Route path="/users/add" element={<AddUsers />} />
+      </Routes>
     </ConfigProvider>
   );
 }

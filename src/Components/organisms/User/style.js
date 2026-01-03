@@ -85,6 +85,13 @@ export const tableStyles = `
   }
 
   /* Table filters section */
+
+  .table-filters-container {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: space-between;
+  
   .table-filters {
     margin-bottom: 16px;
     padding: 16px;
@@ -132,6 +139,7 @@ export const tableStyles = `
   .table-filters .ant-input-search .anticon {
     color: #000;
   }
+}
 
   /* Override action buttons */
   .custom-user-table .ant-btn {
@@ -338,13 +346,11 @@ export const injectStyles = (Component, styles = tableStyles, styleId = 'custom-
     return <Component {...props} />;
   };
   
-  // Preserve component display name for debugging
   WrappedComponent.displayName = `withStyles(${Component.displayName || Component.name || 'Component'})`;
   
   return WrappedComponent;
 };
 
-// Export class names for use in components
 export const tableClasses = {
   tableContainer: 'custom-user-table',
   searchContainer: 'custom-search-container',
